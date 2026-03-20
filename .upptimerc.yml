@@ -2,6 +2,7 @@ owner: taleex
 repo: ST-uptime-taleex
 
 sites:
+  # Existing projects
   - name: CR-rmtDev
     url: https://taleex-rmtdev.netlify.app/
 
@@ -32,6 +33,16 @@ sites:
   - name: SC_Games-Library
     url: http://taleex-games-library.infinityfree.me/index.php
 
+  # Supabase projects
+  - name: Supabase FMG
+    url: https://ijrxbvugxiizlsuhgelp.supabase.co
+
+  - name: Supabase Taleex
+    url: https://ooefpodiqdupfpyqmaif.supabase.co
+
+  - name: Supabase Nexus
+    url: https://xbdreylpzvtswvvktjjn.supabase.co
+
 status-website:
   baseUrl: /ST-uptime-taleex
   name: Taleex Status
@@ -42,4 +53,3 @@ status-website:
       href: /
     - title: GitHub
       href: https://github.com/taleex/ST-uptime-taleex
-      
