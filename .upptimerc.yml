@@ -41,22 +41,25 @@ sites:
   - name: Supabase FMG
     url: https://ijrxbvugxiizlsuhgelp.supabase.co/rest/v1/health?select=*
     headers:
-      apikey: ${{ secrets.SUPABASE_ANON_KEY_FMG }}
+      - name: apikey
+        value: ${{ secrets.SUPABASE_ANON_KEY_FMG }}
 
   - name: Supabase Taleex
     url: https://ooefpodiqdupfpyqmaif.supabase.co/rest/v1/health?select=*
     headers:
-      apikey: ${{ secrets.SUPABASE_ANON_KEY_TALEEX }}
+      - name: apikey
+        value: ${{ secrets.SUPABASE_ANON_KEY_TALEEX }}
 
   - name: Supabase Nexus
     url: https://xbdreylpzvtswvvktjjn.supabase.co/rest/v1/health?select=*
     headers:
-      apikey: ${{ secrets.SUPABASE_ANON_KEY_NEXUS }}
+      - name: apikey
+        value: ${{ secrets.SUPABASE_ANON_KEY_NEXUS }}
 
 status-website:
   baseUrl: /ST-uptime-taleex
   name: Taleex Status
-  introTitle: "Project Status Dashboard"
+  introTitle: "Taleex Status"
   introMessage: "Real-time uptime monitoring for all Taleex projects."
   navbar:
     - title: Status
