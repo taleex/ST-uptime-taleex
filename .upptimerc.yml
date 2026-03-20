@@ -2,7 +2,9 @@ owner: taleex
 repo: ST-uptime-taleex
 
 sites:
-  # Existing projects
+  # ------------------------------
+  # Hosted Apps
+  # ------------------------------
   - name: CR-rmtDev
     url: https://taleex-rmtdev.netlify.app/
 
@@ -33,15 +35,23 @@ sites:
   - name: SC_Games-Library
     url: http://taleex-games-library.infinityfree.me/index.php
 
-  # Supabase projects
+  # ------------------------------
+  # Supabase Projects with API keys
+  # ------------------------------
   - name: Supabase FMG
-    url: https://ijrxbvugxiizlsuhgelp.supabase.co
+    url: https://ijrxbvugxiizlsuhgelp.supabase.co/rest/v1/health?select=*
+    headers:
+      apikey: ${{ secrets.SUPABASE_ANON_KEY_FMG }}
 
   - name: Supabase Taleex
-    url: https://ooefpodiqdupfpyqmaif.supabase.co
+    url: https://ooefpodiqdupfpyqmaif.supabase.co/rest/v1/health?select=*
+    headers:
+      apikey: ${{ secrets.SUPABASE_ANON_KEY_TALEEX }}
 
   - name: Supabase Nexus
-    url: https://xbdreylpzvtswvvktjjn.supabase.co
+    url: https://xbdreylpzvtswvvktjjn.supabase.co/rest/v1/health?select=*
+    headers:
+      apikey: ${{ secrets.SUPABASE_ANON_KEY_NEXUS }}
 
 status-website:
   baseUrl: /ST-uptime-taleex
