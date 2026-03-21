@@ -1,7 +1,7 @@
-url: https://ooefpodiqdupfpyqmaif.supabase.co/rest/v1/health?select=*
-status: down
-code: 404
-responseTime: 1335
-lastUpdated: 2026-03-21T12:12:19.354Z
+url: https://ooefpodiqdupfpyqmaif.supabase.co/auth/v1/settings
+status: up
+code: 200
+responseTime: 936
+lastUpdated: 2026-03-21T12:31:28.563Z
 startTime: 2026-03-21T11:26:48.405Z
 generator: Upptime <https://github.com/upptime/upptime>
