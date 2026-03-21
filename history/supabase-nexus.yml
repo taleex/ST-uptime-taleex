@@ -1,7 +1,7 @@
 url: https://xbdreylpzvtswvvktjjn.supabase.co/auth/v1/settings
-status: down
-code: 401
-responseTime: 149
-lastUpdated: 2026-03-21T12:08:19.060Z
+status: up
+code: 200
+responseTime: 682
+lastUpdated: 2026-03-21T12:12:20.227Z
 startTime: 2026-03-21T11:26:50.076Z
 generator: Upptime <https://github.com/upptime/upptime>
