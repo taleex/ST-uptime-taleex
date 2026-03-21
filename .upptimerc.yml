@@ -41,18 +41,18 @@ sites:
   - name: Supabase FMG
     url: https://ijrxbvugxiizlsuhgelp.supabase.co/rest/v1/health?select=*
     headers:
-      - "apikey: ${{ secrets.SUPABASE_ANON_KEY_FMG }}"
+      - "apikey: $SUPABASE_ANON_KEY_FMG"
 
   - name: Supabase Taleex
     url: https://ooefpodiqdupfpyqmaif.supabase.co/rest/v1/health?select=*
     headers:
-      - "apikey: ${{ secrets.SUPABASE_ANON_KEY_TALEEX }}"
+      - "apikey: $SUPABASE_ANON_KEY_TALEEX"
 
   - name: Supabase Nexus
     url: https://xbdreylpzvtswvvktjjn.supabase.co/auth/v1/settings
     headers:
-      - "apikey: ${{ secrets.SUPABASE_ANON_KEY_NEXUS }}"
-      - "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_NEXUS }}"
+      - "apikey: $SUPABASE_ANON_KEY_NEXUS"
+      - "Authorization: Bearer $SUPABASE_ANON_KEY_NEXUS"
 
 status-website:
   baseUrl: /ST-uptime-taleex
