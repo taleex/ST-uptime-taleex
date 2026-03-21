@@ -1,7 +1,7 @@
-url: https://xbdreylpzvtswvvktjjn.supabase.co/rest/v1/health?select=*
+url: https://xbdreylpzvtswvvktjjn.supabase.co/auth/v1/settings
 status: down
 code: 401
-responseTime: 221
-lastUpdated: 2026-03-21T11:26:50.358Z
+responseTime: 149
+lastUpdated: 2026-03-21T12:08:19.060Z
 startTime: 2026-03-21T11:26:50.076Z
 generator: Upptime <https://github.com/upptime/upptime>
