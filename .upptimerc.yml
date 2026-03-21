@@ -23,7 +23,7 @@ sites:
       - "apikey: $SUPABASE_ANON_KEY_TALEEX"
       - "Authorization: Bearer $SUPABASE_ANON_KEY_TALEEX"
 
-  - name: Supabase Nexus
+  - name: Supabase Nexor
     url: https://xbdreylpzvtswvvktjjn.supabase.co/auth/v1/settings
     headers:
       - "apikey: $SUPABASE_ANON_KEY_NEXUS"
