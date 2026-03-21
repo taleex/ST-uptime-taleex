@@ -49,9 +49,10 @@ sites:
       - "apikey: ${{ secrets.SUPABASE_ANON_KEY_TALEEX }}"
 
   - name: Supabase Nexus
-    url: https://xbdreylpzvtswvvktjjn.supabase.co/rest/v1/health?select=*
+    url: https://xbdreylpzvtswvvktjjn.supabase.co/auth/v1/settings
     headers:
       - "apikey: ${{ secrets.SUPABASE_ANON_KEY_NEXUS }}"
+      - "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_NEXUS }}"
 
 status-website:
   baseUrl: /ST-uptime-taleex
