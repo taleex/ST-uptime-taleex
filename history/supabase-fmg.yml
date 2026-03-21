@@ -1,7 +1,7 @@
 url: https://ijrxbvugxiizlsuhgelp.supabase.co/rest/v1/health?select=*
 status: down
-code: 401
-responseTime: 185
-lastUpdated: 2026-03-21T12:08:18.241Z
+code: 404
+responseTime: 926
+lastUpdated: 2026-03-21T12:12:16.894Z
 startTime: 2026-03-21T11:26:46.571Z
 generator: Upptime <https://github.com/upptime/upptime>
