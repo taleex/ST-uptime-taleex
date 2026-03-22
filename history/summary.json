@@ -166,18 +166,20 @@
     "url": "https://taleex-fancycounter.netlify.app/",
     "icon": "https://icons.duckduckgo.com/ip3/taleex-fancycounter.netlify.app.ico",
     "slug": "cr-fancy-counter",
-    "status": "up",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "status": "down",
+    "uptime": "99.99%",
+    "uptimeDay": "99.99%",
+    "uptimeWeek": "99.99%",
+    "uptimeMonth": "99.99%",
+    "uptimeYear": "99.99%",
     "time": 446,
     "timeDay": 458,
     "timeWeek": 446,
     "timeMonth": 446,
     "timeYear": 446,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-03-22": 0
+    }
   },
   {
     "name": "LP_steammarket-analytics",
