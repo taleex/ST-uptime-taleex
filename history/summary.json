@@ -166,19 +166,19 @@
     "url": "https://taleex-fancycounter.netlify.app/",
     "icon": "https://icons.duckduckgo.com/ip3/taleex-fancycounter.netlify.app.ico",
     "slug": "cr-fancy-counter",
-    "status": "down",
-    "uptime": "99.99%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "99.99%",
-    "uptimeMonth": "99.99%",
-    "uptimeYear": "99.99%",
-    "time": 446,
-    "timeDay": 458,
-    "timeWeek": 446,
-    "timeMonth": 446,
-    "timeYear": 446,
+    "status": "up",
+    "uptime": "99.02%",
+    "uptimeDay": "98.37%",
+    "uptimeWeek": "99.02%",
+    "uptimeMonth": "99.02%",
+    "uptimeYear": "99.02%",
+    "time": 420,
+    "timeDay": 409,
+    "timeWeek": 420,
+    "timeMonth": 420,
+    "timeYear": 420,
     "dailyMinutesDown": {
-      "2026-03-22": 0
+      "2026-03-22": 24
     }
   },
   {
