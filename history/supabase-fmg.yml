@@ -1,7 +1,7 @@
 url: https://ijrxbvugxiizlsuhgelp.supabase.co/auth/v1/settings
-status: down
-code: 0
-responseTime: 0
-lastUpdated: 2026-04-18T23:30:11.641Z
+status: up
+code: 200
+responseTime: 661
+lastUpdated: 2026-04-19T20:39:47.063Z
 startTime: 2026-03-21T11:26:46.571Z
 generator: Upptime <https://github.com/upptime/upptime>
