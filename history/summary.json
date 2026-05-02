@@ -22,9 +22,9 @@
     "url": "https://ijrxbvugxiizlsuhgelp.supabase.co/auth/v1/settings",
     "icon": "https://icons.duckduckgo.com/ip3/ijrxbvugxiizlsuhgelp.supabase.co.ico",
     "slug": "supabase-fmg",
-    "status": "up",
+    "status": "down",
     "uptime": "97.53%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "96.62%",
     "uptimeYear": "97.53%",
@@ -34,6 +34,7 @@
     "timeMonth": 767,
     "timeYear": 730,
     "dailyMinutesDown": {
+      "2026-05-02": 0,
       "2026-04-19": 1240,
       "2026-04-18": 240
     }
