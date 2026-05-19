@@ -1,7 +1,7 @@
 url: https://taleex-word-analytics.netlify.app/
-status: up
-code: 200
-responseTime: 710
-lastUpdated: 2026-05-19T00:02:18.065Z
+status: down
+code: 500
+responseTime: 3014
+lastUpdated: 2026-05-19T21:03:26.546Z
 startTime: 2026-03-20T18:47:17.208Z
 generator: Upptime <https://github.com/upptime/upptime>
