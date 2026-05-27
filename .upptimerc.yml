@@ -30,8 +30,20 @@ sites:
       - "Authorization: Bearer $SUPABASE_ANON_KEY_NEXUS"
 
   # ------------------------------
+  # Neon Projects with API keys
+  # ------------------------------
+
+- name: Neon PetSoft DB
+    url: https://ep-fancy-cherry-aput4oz0.apirest.c-7.us-east-1.aws.neon.tech/neondb/rest/v1
+    headers:
+      - "Authorization: Bearer $NEON_API_KEY_PETSOFT"
+
+  # ------------------------------
   # Hosted Apps
   # ------------------------------
+  - name: CR_PetSoft
+    url: https://taleex-petsoft.vercel.app/
+
   - name: CR-evento
     url: https://taleex-cr-evento.vercel.app/
 
