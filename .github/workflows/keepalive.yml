@@ -1,0 +1,55 @@
+name: Keep Databases Alive
+
+on:
+  schedule:
+    # Run every 2 weeks to prevent 14-day inactivity suspension
+    - cron: "0 12 */14 * *"
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  keep-alive:
+    name: Wake databases to prevent suspension
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake Neon PetSoft DB
+        run: |
+          echo "Pinging Neon PetSoft DB..."
+          curl -s -o /dev/null -w "  HTTP %{http_code}\n" \
+            --connect-timeout 15 \
+            --max-time 20 \
+            --header "Authorization: Bearer ${{ secrets.NEON_API_KEY_PETSOFT }}" \
+            "https://ep-fancy-cherry-aput4oz0.apirest.c-7.us-east-1.aws.neon.tech/neondb/rest/v1" \
+            || echo "  → DB was asleep, now waking up..."
+
+      - name: Wake Supabase FMG
+        run: |
+          echo "Pinging Supabase FMG..."
+          curl -s -o /dev/null -w "  HTTP %{http_code}\n" \
+            --connect-timeout 15 \
+            --max-time 20 \
+            --header "apikey: ${{ secrets.SUPABASE_ANON_KEY_FMG }}" \
+            --header "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_FMG }}" \
+            "https://ijrxbvugxiizlsuhgelp.supabase.co/auth/v1/settings" \
+            || echo "  → Supabase FMG waking up..."
+
+      - name: Wake Supabase Taleex
+        run: |
+          echo "Pinging Supabase Taleex..."
+          curl -s -o /dev/null -w "  HTTP %{http_code}\n" \
+            --connect-timeout 15 \
+            --max-time 20 \
+            --header "apikey: ${{ secrets.SUPABASE_ANON_KEY_TALEEX }}" \
+            --header "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_TALEEX }}" \
+            "https://ooefpodiqdupfpyqmaif.supabase.co/auth/v1/settings" \
+            || echo "  → Supabase Taleex waking up..."
+
+      - name: Wake Supabase Nexor
+        run: |
+          echo "Pinging Supabase Nexor..."
+          curl -s -o /dev/null -w "  HTTP %{http_code}\n" \
+            --connect-timeout 15 \
+            --max-time 20 \
+            --header "apikey: ${{ secrets.SUPABASE_ANON_KEY_NEXUS }}" \
+            --header "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_NEXUS }}" \
+            "https://xbdreylpzvtswvvktjjn.supabase.co/auth/v1/settings" \
+            || echo "  → Supabase Nexor waking up..."
