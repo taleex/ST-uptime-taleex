@@ -25,12 +25,12 @@
     "url": "https://ijrxbvugxiizlsuhgelp.supabase.co/auth/v1/settings",
     "icon": "https://icons.duckduckgo.com/ip3/ijrxbvugxiizlsuhgelp.supabase.co.ico",
     "slug": "supabase-fmg",
-    "status": "up",
-    "uptime": "94.19%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "95.74%",
-    "uptimeMonth": "95.83%",
-    "uptimeYear": "94.19%",
+    "status": "down",
+    "uptime": "94.20%",
+    "uptimeDay": "99.95%",
+    "uptimeWeek": "96.96%",
+    "uptimeMonth": "96.11%",
+    "uptimeYear": "94.20%",
     "time": 774,
     "timeDay": 733,
     "timeWeek": 863,
@@ -43,7 +43,8 @@
       "2026-05-03": 1440,
       "2026-05-02": 1213,
       "2026-05-28": 723,
-      "2026-05-27": 262
+      "2026-05-27": 262,
+      "2026-06-04": 1
     }
   },
   {
@@ -69,12 +70,12 @@
     "url": "https://xbdreylpzvtswvvktjjn.supabase.co/auth/v1/settings",
     "icon": "https://icons.duckduckgo.com/ip3/xbdreylpzvtswvvktjjn.supabase.co.ico",
     "slug": "supabase-nexor",
-    "status": "up",
-    "uptime": "67.50%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "95.74%",
+    "status": "down",
+    "uptime": "67.54%",
+    "uptimeDay": "99.98%",
+    "uptimeWeek": "96.96%",
     "uptimeMonth": "28.04%",
-    "uptimeYear": "67.50%",
+    "uptimeYear": "67.54%",
     "time": 824,
     "timeDay": 826,
     "timeWeek": 868,
@@ -108,7 +109,8 @@
       "2026-05-09": 1440,
       "2026-05-08": 1440,
       "2026-05-07": 1440,
-      "2026-05-06": 559
+      "2026-05-06": 559,
+      "2026-06-04": 0
     }
   },
   {
@@ -128,7 +130,7 @@
     "timeMonth": 110,
     "timeYear": 110,
     "dailyMinutesDown": {
-      "2026-06-04": 293,
+      "2026-06-04": 417,
       "2026-06-03": 1440,
       "2026-06-02": 1440,
       "2026-06-01": 1440,
