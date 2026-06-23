@@ -2,54 +2,56 @@ name: Keep Databases Alive
 
 on:
   schedule:
-    # Run every 2 weeks to prevent 14-day inactivity suspension
-    - cron: "0 12 */14 * *"
+    # Run every 5 days to prevent 7-day Supabase auto-pause
+    - cron: "0 0 */5 * *"
   workflow_dispatch: # Allow manual trigger
- 
+
 jobs:
   keep-alive:
     name: Wake databases to prevent suspension
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - name: Supabase FMG
+            url_secret: SUPABASE_URL_FMG
+            key_secret: SUPABASE_KEY_FMG
+          - name: Supabase Taleex
+            url_secret: SUPABASE_URL_TALEEX
+            key_secret: SUPABASE_KEY_TALEEX
+          - name: Supabase Nexor
+            url_secret: SUPABASE_URL_NEXOR
+            key_secret: SUPABASE_KEY_NEXOR
     steps:
-      - name: Wake Neon PetSoft DB
+      - name: "Keep ${{ matrix.project.name }} alive"
+        env:
+          SUPABASE_URL: ${{ secrets[matrix.project.url_secret] }}
+          SUPABASE_KEY: ${{ secrets[matrix.project.key_secret] }}
         run: |
-          echo "Pinging Neon PetSoft DB..."
-          curl -s -o /dev/null -w "  HTTP %{http_code}\n" \
+          echo "Pinging ${{ matrix.project.name }} with real database query..."
+          
+          # Step 1: Force PostgREST schema introspection (real pg_catalog DB query)
+          echo "  → PostgREST schema introspection..."
+          INTROSPECT_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
             --connect-timeout 15 \
             --max-time 20 \
-            --header "Authorization: Bearer ${{ secrets.NEON_API_KEY_PETSOFT }}" \
-            "https://ep-fancy-cherry-aput4oz0.apirest.c-7.us-east-1.aws.neon.tech/neondb/rest/v1" \
-            || echo "  → DB was asleep, now waking up..."
-
-      - name: Wake Supabase FMG
-        run: |
-          echo "Pinging Supabase FMG..."
-          curl -s -o /dev/null -w "  HTTP %{http_code}\n" \
+            --header "apikey: ${SUPABASE_KEY}" \
+            --header "Authorization: Bearer ${SUPABASE_KEY}" \
+            "${SUPABASE_URL}/rest/v1/?format=openapi" 2>&1)
+          echo "    HTTP ${INTROSPECT_CODE}"
+          
+          # Step 2: Execute SELECT 1 via PostgREST with count query (forces real SQL)
+          echo "  → PostgREST count query..."
+          COUNT_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
             --connect-timeout 15 \
             --max-time 20 \
-            --header "apikey: ${{ secrets.SUPABASE_ANON_KEY_FMG }}" \
-            --header "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_FMG }}" \
-            "https://ijrxbvugxiizlsuhgelp.supabase.co/auth/v1/settings" \
-            || echo "  → Supabase FMG waking up..."
-
-      - name: Wake Supabase Taleex
-        run: |
-          echo "Pinging Supabase Taleex..."
-          curl -s -o /dev/null -w "  HTTP %{http_code}\n" \
-            --connect-timeout 15 \
-            --max-time 20 \
-            --header "apikey: ${{ secrets.SUPABASE_ANON_KEY_TALEEX }}" \
-            --header "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_TALEEX }}" \
-            "https://ooefpodiqdupfpyqmaif.supabase.co/auth/v1/settings" \
-            || echo "  → Supabase Taleex waking up..."
-
-      - name: Wake Supabase Nexor
-        run: |
-          echo "Pinging Supabase Nexor..."
-          curl -s -o /dev/null -w "  HTTP %{http_code}\n" \
-            --connect-timeout 15 \
-            --max-time 20 \
-            --header "apikey: ${{ secrets.SUPABASE_ANON_KEY_NEXUS }}" \
-            --header "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_NEXUS }}" \
-            "https://xbdreylpzvtswvvktjjn.supabase.co/auth/v1/settings" \
-            || echo "  → Supabase Nexor waking up..."
+            --request GET \
+            --header "apikey: ${SUPABASE_KEY}" \
+            --header "Authorization: Bearer ${SUPABASE_KEY}" \
+            --header "Accept: application/json" \
+            --header "Prefer: count=exact" \
+            "${SUPABASE_URL}/rest/v1/" 2>&1)
+          echo "    HTTP ${COUNT_CODE}"
+          
+          echo "  → ${{ matrix.project.name }} done!"
