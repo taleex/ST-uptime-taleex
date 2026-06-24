@@ -1,75 +1,57 @@
 owner: taleex
 repo: ST-uptime-taleex
-
 sites:
   # ------------------------------
   # Top Priority Hosted App
   # ------------------------------
   - name: LP_Taleex
     url: https://taleex.netlify.app/
-
   # ------------------------------
   # Supabase Projects with API keys
   # ------------------------------
   - name: Supabase FMG
-    url: https://ijrxbvugxiizlsuhgelp.supabase.co/auth/v1/settings
+    url: https://ijrxbvugxiizlsuhgelp.supabase.co/rest/v1/
     headers:
-      - "apikey: $SUPABASE_ANON_KEY_FMG"
-      - "Authorization: Bearer $SUPABASE_ANON_KEY_FMG"
-
+      - "apikey: $SUPABASE_KEY_FMG"
+      - "Authorization: Bearer $SUPABASE_KEY_FMG"
   - name: Supabase Taleex
-    url: https://ooefpodiqdupfpyqmaif.supabase.co/auth/v1/settings
+    url: https://ooefpodiqdupfpyqmaif.supabase.co/rest/v1/
     headers:
-      - "apikey: $SUPABASE_ANON_KEY_TALEEX"
-      - "Authorization: Bearer $SUPABASE_ANON_KEY_TALEEX"
-
+      - "apikey: $SUPABASE_KEY_TALEEX"
+      - "Authorization: Bearer $SUPABASE_KEY_TALEEX"
   - name: Supabase Nexor
-    url: https://xbdreylpzvtswvvktjjn.supabase.co/auth/v1/settings
+    url: https://xbdreylpzvtswvvktjjn.supabase.co/rest/v1/
     headers:
-      - "apikey: $SUPABASE_ANON_KEY_NEXUS"
-      - "Authorization: Bearer $SUPABASE_ANON_KEY_NEXUS"
-
+      - "apikey: $SUPABASE_KEY_NEXOR"
+      - "Authorization: Bearer $SUPABASE_KEY_NEXOR"
   # ------------------------------
   # Neon Projects with API keys
   # ------------------------------
   - name: Neon PetSoft DB
-    url: https://ep-fancy-cherry-aput4oz0.apirest.c-7.us-east-1.aws.neon.tech/neondb/rest/v1
-    headers:
-      - "Authorization: Bearer $NEON_API_KEY_PETSOFT"
-
+    url: https://taleex-petsoft.vercel.app/api/ping
   # ------------------------------
   # Hosted Apps
   # ------------------------------
   - name: CR_PetSoft
     url: https://taleex-petsoft.vercel.app/
-
   - name: CR-evento
     url: https://taleex-cr-evento.vercel.app/
-
   - name: CR-rmtDev
     url: https://taleex-rmtdev.netlify.app/
-
   - name: CR-CorpComment
     url: https://taleex-corpcomment.netlify.app/
-
   - name: CR_trekbag-app
     url: https://taleex-trekbag.netlify.app/
-
   - name: CR_Word-Analytics
     url: https://taleex-word-analytics.netlify.app/
-
   - name: CR_Fancy-Counter
     url: https://taleex-fancycounter.netlify.app/
-
   - name: LP_steammarket-analytics
     url: https://taleex-steammarket-analytics.netlify.app/
-
   - name: LP_valentine
     url: https://taleex-valentine.netlify.app/
-
   - name: SC_Games-Library
     url: http://taleex-games-library.infinityfree.me/index.php
-
 status-website:
   baseUrl: /ST-uptime-taleex
   name: Taleex Status
